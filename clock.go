@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 	"time"
 )
 
@@ -21,12 +22,14 @@ func clock(timr time.Time) {
 	}
 
 	fmt.Print("\033[H\033[2J") // Clear the console
-	// fmt.Print(draw(s1), draw(s2))
 	s1a := draw(s1)
 	s2a := draw(s2)
-	sa := append(s1a, s2a...)
-	// fmt.Print(s1a[0], s2a[0])
-	fmt.Print(sa)
+	r := "0"
+	for i := 0; i < len(s1a); i++ {
+		// Replace all linebreaks in s1a[i] with s2a[i], all
+		r = strings.NewReplacer("\n", s2a[i]).Replace(s1a[i])
+		fmt.Print(r)
+	}
 }
 
 func main() {
