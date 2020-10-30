@@ -1,7 +1,8 @@
 package main
 
 func draw(num int) []string {
-	if num == 0 {
+	switch num {
+	case 0:
 		return []string{"   XXXXXX  ",
 			"  XX    XX ",
 			" XX    XXXX",
@@ -11,7 +12,7 @@ func draw(num int) []string {
 			" XXXX    XX",
 			"  XX    XX ",
 			"   XXXXXX  "}
-	} else if num == 1 {
+	case 1:
 		return []string{"     XX    ",
 			"    XXX    ",
 			"  XXXXX    ",
@@ -21,7 +22,7 @@ func draw(num int) []string {
 			"     XX    ",
 			"     XX    ",
 			"  XXXXXXXX "}
-	} else if num == 2 {
+	case 2:
 		return []string{"  XXXXXXXX ",
 			" XX      XX",
 			"         XX",
@@ -31,7 +32,7 @@ func draw(num int) []string {
 			"  XX       ",
 			" XX        ",
 			" XXXXXXXXXX"}
-	} else if num == 3 {
+	case 3:
 		return []string{" XXXXXXXXXX",
 			"         XX",
 			"       XXX ",
@@ -41,7 +42,7 @@ func draw(num int) []string {
 			"         XX",
 			" XX      XX",
 			"  XXXXXXXX "}
-	} else if num == 4 {
+	case 4:
 		return []string{"      XXX  ",
 			"     XXXX  ",
 			"    XX XX  ",
@@ -51,7 +52,7 @@ func draw(num int) []string {
 			"       XX  ",
 			"       XX  ",
 			"       XX  "}
-	} else if num == 5 {
+	case 5:
 		return []string{" XXXXXXXXXX",
 			" XX        ",
 			" XX        ",
@@ -61,7 +62,7 @@ func draw(num int) []string {
 			"         XX",
 			" XX     XX ",
 			"  XXXXXXX  "}
-	} else if num == 6 {
+	case 6:
 		return []string{"     XXXX  ",
 			"   XXX     ",
 			"  XX       ",
@@ -71,7 +72,7 @@ func draw(num int) []string {
 			" XX      XX",
 			" XX      XX",
 			"  XXXXXXXX "}
-	} else if num == 7 {
+	case 7:
 		return []string{" XXXXXXXXXX",
 			"         XX",
 			"        XX ",
@@ -81,7 +82,7 @@ func draw(num int) []string {
 			"    XX     ",
 			"   XX      ",
 			"   XX      "}
-	} else if num == 8 {
+	case 8:
 		return []string{"  XXXXXXXX ",
 			" XX      XX",
 			" XX      XX",
@@ -91,7 +92,7 @@ func draw(num int) []string {
 			" XX      XX",
 			" XX      XX",
 			"  XXXXXXXX "}
-	} else if num == 9 {
+	case 9:
 		return []string{"  XXXXXXXX ",
 			" XX      XX",
 			" XX      XX",
@@ -101,7 +102,7 @@ func draw(num int) []string {
 			"        XX ",
 			"      XXX  ",
 			"   XXXX    "}
-	} else if num == 58 {
+	case 58:
 		return []string{"   ",
 			" XX",
 			" XX",
@@ -111,7 +112,7 @@ func draw(num int) []string {
 			" XX",
 			" XX",
 			"   "}
-	} else {
+	default:
 		return []string{}
 	}
 }
