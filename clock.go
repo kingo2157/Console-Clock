@@ -11,9 +11,7 @@ func doEvery(td time.Duration, t func(time.Time)) {
 	}
 }
 
-func clock(timr time.Time) {
-	t := time.Now()
-
+func clock(t time.Time) {
 	s := t.Second()
 	var s1 int
 	s2 := s % 10
