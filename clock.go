@@ -12,39 +12,39 @@ func doEvery(td time.Duration, t func(time.Time)) {
 }
 
 func clock(t time.Time) {
-	s := t.Second()
-	var s1 int
-	s2 := s % 10
-	if s >= 10 {
-		s1 = s / 10
+	sec := t.Second()
+	var sec1 int
+	sec2 := sec % 10
+	if sec >= 10 {
+		sec1 = sec / 10
 	}
-	s1a := draw(s1)
-	s2a := draw(s2)
+	sec1a := draw(sec1)
+	sec2a := draw(sec2)
 
-	m := t.Minute()
-	var m1 int
-	m2 := m % 10
-	if m >= 10 {
-		m1 = m / 10
+	min := t.Minute()
+	var min1 int
+	min2 := min % 10
+	if min >= 10 {
+		min1 = min / 10
 	}
-	m1a := draw(m1)
-	m2a := draw(m2)
+	min1a := draw(min1)
+	min2a := draw(min2)
 
-	h := t.Hour()
-	var h1 int
-	h2 := h % 10
-	if h >= 10 {
-		h1 = h / 10
+	hour := t.Hour()
+	var hour1 int
+	hour2 := hour % 10
+	if hour >= 10 {
+		hour1 = hour / 10
 	}
-	h1a := draw(h1)
-	h2a := draw(h2)
+	hour1a := draw(hour1)
+	hour2a := draw(hour2)
 
 	semicln := draw(58)
 
 	fmt.Print("\033[H\033[2J") // Clear the console
 
-	for i := 0; i < len(s1a); i++ {
-		fmt.Print(h1a[i], h2a[i], semicln[i], m1a[i], m2a[i], semicln[i], s1a[i], s2a[i], "\n")
+	for i := 0; i < len(sec1a); i++ {
+		fmt.Print(hour1a[i], hour2a[i], semicln[i], min1a[i], min2a[i], semicln[i], sec1a[i], sec2a[i], "\n")
 	}
 }
 
