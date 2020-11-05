@@ -5,6 +5,10 @@ import (
 	"time"
 )
 
+func main() {
+	doEvery(250*time.Millisecond, clock)
+}
+
 func doEvery(td time.Duration, t func(time.Time)) {
 	for x := range time.Tick(td) {
 		t(x)
@@ -41,8 +45,4 @@ func clock(t time.Time) {
 		// Print Clock
 		fmt.Print(hour1a[i], hour2a[i], semicln[i], min1a[i], min2a[i], semicln[i], sec1a[i], sec2a[i], "\n")
 	}
-}
-
-func main() {
-	doEvery(250*time.Millisecond, clock)
 }
