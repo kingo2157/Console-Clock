@@ -41,7 +41,7 @@ func clock(t time.Time) {
 
 	fmt.Print("\033[H\033[2J") // Clear the console
 
-	for i := 0; i < len(sec1a); i++ {
+	for i, n := 0, len(sec1a); i < n; i++ {
 		// Print Clock
 		fmt.Print(hour1a[i], hour2a[i], semicln[i], min1a[i], min2a[i], semicln[i], sec1a[i], sec2a[i], "\n")
 	}
